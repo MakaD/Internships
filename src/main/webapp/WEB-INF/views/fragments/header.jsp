@@ -25,7 +25,10 @@
                     <a href="<spring:url value="/about"/>">About</a>
                 </li>
                 <li>
-                    <a href="<spring:url value="/internships"/>">List od ads</a>
+                    <a href="<spring:url value="/internships"/>">List of ads</a>
+                </li>
+                <li>
+                    <a href="<spring:url value="/list"/>">Manage ads</a>
                 </li>
             </ul>
         </div>

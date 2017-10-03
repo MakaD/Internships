@@ -1,38 +1,102 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-    <title>All Ads</title>
 
-    <style>
-        tr:first-child{
-            font-weight: bold;
-            background-color: #C6C9C4;
-        }
-    </style>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="<c:url value="/resources/css/home.css" />" >
+<link rel="stylesheet" href="<c:url value="/resources/css/allads.css" />" >
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<head>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Internship for You</title>
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
 
 </head>
 
-
 <body>
-<h2>List of Ads</h2>
-<table>
-    <tr>
-        <td>TITLE</td><td>Company</td><td>City</td><td>Id</td><td></td>
-    </tr>
-    <c:forEach items="${ads}" var="ad">
-        <tr>
-            <td>${ad.title}</td>
-            <td>${ad.company}</td>
-            <td>${ad.city}</td>
-            <td><a href="<c:url value='/edit-${ad.id}-employee' />">${ad.id}</a></td>
-            <td><a href="<c:url value='/delete-${ad.id}-employee' />">delete</a></td>
-        </tr>
-    </c:forEach>
-</table>
 
-<br/>
+<%@ include file="../views/fragments/header.jsp"%>
+
+
+<div class="container">
+
+    <!-- Page Header -->
+    <div class="row">
+        <div class="col-lg-12">
+            <br>
+            <h1 class="page-header">Manage
+                <small>all ads here</small>
+            </h1>
+        </div>
+    </div>
+    <!-- /.row -->
+
+    <div class="row">
+
+        <div class="col-md-10 col-md-offset-1">
+
+            <div class="panel panel-default panel-table">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col col-xs-6">
+                            <h3 class="panel-title">List of all ads</h3>
+                        </div>
+                        <div class="col col-xs-6 text-right">
+                            <a href="<spring:url value="/new"/>" class="btn btn-sm btn-primary btn-create" role="button">Add New</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <table class="table table-striped table-bordered table-list">
+                        <thead>
+                        <tr>
+                            <th><em class="fa fa-cog"></em></th>
+                            <th>Title</th>
+                            <th>Deadline</th>
+                            <th>Company</th>
+                            <th>Category</th>
+                            <th>City</th>
+
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <c:forEach items="${ads}" var="ad">
+                        <tr>
+                            <td align="center">
+                                <a class="btn btn-default" onclick="location.href = '/edit/${ad.id}/ad';"><em class="fa fa-pencil"></em></a>
+                                <a class="btn btn-danger" onclick="location.href = '/delete/${ad.id}/ad';"><em class="fa fa-trash"></em></a>
+                            </td>
+                            <td>${ad.title}</td>
+                            <td>${ad.deadline}</td>
+                            <td>${ad.company}</td>
+                            <td>${ad.category}</td>
+                            <td>${ad.city}</td>
+
+                        </tr>
+                        </c:forEach>
+                        </tbody>
+                    </table>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<%@ include file="../views/fragments/footer.jsp"%>
 
 </body>
+
 </html>

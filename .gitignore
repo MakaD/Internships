@@ -1,2 +1,10 @@
 
-.gitattributes
+*.jpg
+*.jpg
+src/main/webapp/resources/images/1.jpg
+src/main/webapp/resources/images/2.jpg
+src/main/webapp/resources/images/3.jpg
+src/main/webapp/resources/images/4.jpg
+src/main/webapp/resources/images/5.jpg
+src/main/webapp/resources/images/6.jpg
+*.jpg

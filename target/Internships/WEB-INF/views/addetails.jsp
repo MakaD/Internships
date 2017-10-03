@@ -42,25 +42,28 @@
 
     <div class="row">
 
-        <div class="col-lg-9">
+        <div class="col-lg-6">
 
             <div class="card mt-4">
-                <img class="card-img-top img-fluid img-responsive" src="<spring:url value="resources/images/${ad.id}.jpg"/>" alt="">
+                <img class="card-img-top img-responsive" src="<c:url value="/resources/images/${ad.company}.jpg" />" alt="">
                 <div class="card-body">
                     <h3 class="card-title">${ad.title}</h3>
-                    <h4>Rok za prijavu: ${ad.deadline}</h4>
+                    <h4>Deadline: ${ad.deadline}</h4>
                     <br>
-                    <h5>Kompanija: ${ad.company}</h5>
-                    <h5>Kategorija: ${ad.category}</h5>
-                    <h5>Grad: ${ad.city}</h5>
+                    <h5>Company: ${ad.company}</h5>
+                    <h5>Category: ${ad.category}</h5>
+                    <h5>City: ${ad.city}</h5>
+                    <br><br>
+                    <p class="card-text">We are hiring for: <br><br> ${ad.description}</p>
                     <br>
-                    <p class="card-text">${ad.description}</p>
                 </div>
             </div>
             <!-- /.card -->
         </div>
         <!-- /.col-lg-9 -->
+
     </div>
+    <!-- /.row -->
 
 </div>
 <!-- /.container -->
@@ -68,6 +71,12 @@
 </body>
 
 <style>
+
+    .img-responsive, .card-img-top{
+        max-height:450px !important;
+        max-width:450px !important;
+    }
+
     body {
         padding-top: 54px;
     }

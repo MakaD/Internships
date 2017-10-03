@@ -43,15 +43,15 @@
     <div class="row">
         <c:forEach items="${ads}" var="ad">
             <div class=" col-md-4 portfolio-item">
-                <a href="#">
-                    <img class="img-responsive" src="<spring:url value="resources/images/${ad.id}.jpg"/>" alt="" style="min-height:50px;height:50px;">
+                <a href="<c:url value='/addetails/${ad.id}'/> ">
+                    <img class="img-responsive" src="<spring:url value="resources/images/${ad.company}.jpg"/>" alt="" style="min-height:50px;height:50px;">
                 </a>
                 <h3>
                     <a href="<c:url value='/addetails/${ad.id}'/>">${ad.title}</a>
                 </h3>
-                <h5>Kategorija: ${ad.category}</h5>
-                <h5>Grad: ${ad.city}</h5>
-                <h5>Kompanija: ${ad.company}</h5>
+                <h5>Category: ${ad.category}</h5>
+                <h5>City: ${ad.city}</h5>
+                <h5>Company: ${ad.company}</h5>
             </div>
         </c:forEach>
     </div>

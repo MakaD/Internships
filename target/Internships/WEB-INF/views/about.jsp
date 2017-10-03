@@ -24,11 +24,68 @@
 
 <body>
 
-<%@ include file="../views/fragments/header.jsp"%>
+<nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation">
+    <div class="container topnav">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand topnav" href="<spring:url value="/"/>">Internship for You</a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="<spring:url value="/about"/>">About</a>
+                </li>
+                <li>
+                    <a href="<spring:url value="/internships"/>">List od ads</a>
+                </li>
+                <li>
+                    <a href="<spring:url value="/list"/>">Manage ads</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
 
-<h3>About</h3>
+<div class="container">
+<!-- Page Header -->
+<div class="row">
+    <div class="col-lg-12">
+        <br>
+        <h1 class="page-header">About
+            <small> us</small>
+        </h1>
+    </div>
+</div>
+<!-- /.row -->
+</div>
 
-<%@ include file="../views/fragments/footer.jsp"%>
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <ul class="list-inline">
+                    <li>
+                        <a href="<spring:url value="/"/>">Home</a>
+                    </li>
+                    <li class="footer-menu-divider">&sdot;</li>
+                    <li>
+                        <a href="<spring:url value="/about"/>">About</a>
+                    </li>
+                </ul>
+                <p class="copyright text-muted small">Copyright &copy; Marina Damnjanovic 2017. All Rights Reserved</p>
+            </div>
+        </div>
+    </div>
+</footer>
 
 </body>
 </html>
