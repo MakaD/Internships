@@ -68,6 +68,8 @@
 </div>
 <!-- /.container -->
 
+<%@ include file="../views/fragments/footer.jsp"%>
+
 </body>
 
 <style>

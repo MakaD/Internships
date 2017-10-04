@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -33,6 +34,11 @@ public class AppController {
 	@RequestMapping("/about")
 	public String about(){
 		return "about";
+	}
+
+	@RequestMapping("/success")
+	public String success(){
+		return "success";
 	}
 
 	@RequestMapping(value = "/internships", method = RequestMethod.GET)
@@ -76,7 +82,7 @@ public class AppController {
      * saving employee in database. It also validates the user input
      */
 	@RequestMapping(value = { "/new" }, method = RequestMethod.POST)
-	public String saveAd(@Valid AdModel ad, BindingResult result,
+	public String saveAd(@Valid @ModelAttribute("ad") AdModel ad, BindingResult result,
 						 ModelMap model) {
 
 		if (result.hasErrors()) {

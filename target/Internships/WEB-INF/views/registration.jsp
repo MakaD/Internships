@@ -41,8 +41,8 @@
     <!-- /.row -->
 
     <div class="row">
-        <%--@elvariable id="ad" type="java"--%>
-        <form:form method="POST" modelAttribute="ad">
+        <%--@elvariable id="ad" type="com.marinadamnjanovic.model.AdModel"--%>
+        <form:form method="POST" action="/new" modelAttribute="ad">
             <form:input type="hidden" path="id" id="id"/>
             <table>
                 <tr>
@@ -50,55 +50,67 @@
                     <td><input type="text" id="title" placeholder='Title' class="form-control"/></td>
                     <td><form:errors path="title" cssClass="error"/></td>
                 </tr>
-
+                <tr class="blank_row">
+                    <td colspan="3"></td>
+                </tr>
                 <tr>
                     <td><label for="deadline">Deadline: </label> </td>
                     <td><input type="text" id="deadline" placeholder='Deadline' class="form-control"/></td>
                     <td><form:errors path="deadline" cssClass="error"/></td>
                 </tr>
-
+                <tr class="blank_row">
+                    <td colspan="3"></td>
+                </tr>
                 <tr>
                     <td><label for="company">Company: </label> </td>
                     <td><input type="text" id="company" placeholder='Company' class="form-control"/></td>
                     <td><form:errors path="company" cssClass="error"/></td>
                 </tr>
-
+                <tr class="blank_row">
+                    <td colspan="3"></td>
+                </tr>
                 <tr>
                     <td><label for="city">City: </label> </td>
                     <td><input type="text" id="city" placeholder='City' class="form-control"/></td>
                     <td><form:errors path="city" cssClass="error"/></td>
                 </tr>
-
+                <tr class="blank_row">
+                    <td colspan="3"></td>
+                </tr>
                 <tr>
                     <td><label for="category">Category: </label> </td>
-                    <td><input type="text" id="category" placeholder='Category' class="form-control"/></td>
+                    <td><input type="text" id="category" placeholder='Category' class="form-control""/></td>
                     <td><form:errors path="category" cssClass="error"/></td>
                 </tr>
-
+                <tr class="blank_row">
+                    <td colspan="3"></td>
+                </tr>
                 <tr>
                     <td><label for="description">Description: </label> </td>
-                    <td><textarea id="description" placeholder="Description" class="form-control"></textarea></td>
+                    <td><textarea id="description" placeholder="Description" class="myarea form-control"></textarea></td>
                     <td><form:errors path="description" cssClass="error"/></td>
                 </tr>
-
+                <tr class="bigger blank_row">
+                    <td colspan="3"></td>
+                </tr>
                 <tr>
+                    <td></td>
                     <td colspan="3">
                         <c:choose>
                             <c:when test="${edit}">
-                                <input type="submit" class="btn btn-sm btn-primary btn-create" value="Update"/>
+                                <input type="submit" class="btn btn-md btn-primary btn-create" value="Update"/>
                             </c:when>
                             <c:otherwise>
-                                <input type="submit" class="btn btn-sm btn-primary btn-create" value="Add New">
+                                <input type="submit" class="btn btn-md btn-primary btn-create" value="Add New">
                             </c:otherwise>
                         </c:choose>
                     </td>
                 </tr>
             </table>
         </form:form>
-        <br/>
-        <br/>
+        <br/><br/>
         Go back to <a href="<spring:url value="/list"/>"> List of All Ads</a>
-        <br><br>
+        <br/><br/>
     </div>
     <!-- /.row -->
 
@@ -107,5 +119,16 @@
 <%@ include file="../views/fragments/footer.jsp"%>
 
 </body>
+
+<style>
+    .blank_row {
+        height: 10px !important;
+        background-color: #FFFFFF;
+    }
+    .myarea {
+        height: 250px !important;
+        width: 500px !important;
+    }
+</style>
 
 </html>
