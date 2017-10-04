@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 
@@ -46,48 +46,48 @@
             <form:input type="hidden" path="id" id="id"/>
             <table>
                 <tr>
-                    <td><label for="title">Title: </label> </td>
-                    <td><input type="text" id="title" placeholder='Title' class="form-control"/></td>
+                    <td><form:label for="title" path="title">Title: </form:label> </td>
+                    <td><form:input type="text" id="title" placeholder='Title' path="title" class="form-control"/></td>
                     <td><form:errors path="title" cssClass="error"/></td>
                 </tr>
                 <tr class="blank_row">
                     <td colspan="3"></td>
                 </tr>
                 <tr>
-                    <td><label for="deadline">Deadline: </label> </td>
-                    <td><input type="text" id="deadline" placeholder='Deadline' class="form-control"/></td>
+                    <td><form:label for="deadline" path="deadline">Deadline: </form:label> </td>
+                    <td><form:input type="text" id="deadline" placeholder='Deadline' path="deadline" class="form-control"/></td>
                     <td><form:errors path="deadline" cssClass="error"/></td>
                 </tr>
                 <tr class="blank_row">
                     <td colspan="3"></td>
                 </tr>
                 <tr>
-                    <td><label for="company">Company: </label> </td>
-                    <td><input type="text" id="company" placeholder='Company' class="form-control"/></td>
+                    <td><form:label for="company" path="company">Company: </form:label> </td>
+                    <td><form:input type="text" id="company" placeholder='Company' path="company" class="form-control"/></td>
                     <td><form:errors path="company" cssClass="error"/></td>
                 </tr>
                 <tr class="blank_row">
                     <td colspan="3"></td>
                 </tr>
                 <tr>
-                    <td><label for="city">City: </label> </td>
-                    <td><input type="text" id="city" placeholder='City' class="form-control"/></td>
+                    <td><form:label for="city" path="city">City: </form:label> </td>
+                    <td><form:input type="text" id="city" placeholder='City' path="city" class="form-control"/></td>
                     <td><form:errors path="city" cssClass="error"/></td>
                 </tr>
                 <tr class="blank_row">
                     <td colspan="3"></td>
                 </tr>
                 <tr>
-                    <td><label for="category">Category: </label> </td>
-                    <td><input type="text" id="category" placeholder='Category' class="form-control""/></td>
+                    <td><form:label for="category" path="category">Category: </form:label> </td>
+                    <td><form:input type="text" id="category" placeholder='Category' path="category" class="form-control"/></td>
                     <td><form:errors path="category" cssClass="error"/></td>
                 </tr>
                 <tr class="blank_row">
                     <td colspan="3"></td>
                 </tr>
                 <tr>
-                    <td><label for="description">Description: </label> </td>
-                    <td><textarea id="description" placeholder="Description" class="myarea form-control"></textarea></td>
+                    <td><form:label for="description" path="description">Description: </form:label> </td>
+                    <td><form:textarea id="description" placeholder="Description" path="description" class="myarea form-control"></form:textarea></td>
                     <td><form:errors path="description" cssClass="error"/></td>
                 </tr>
                 <tr class="bigger blank_row">

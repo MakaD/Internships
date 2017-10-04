@@ -56,8 +56,6 @@ public class AppController {
 		return "addetails";
 	}
 
-
-
 	@RequestMapping(value = "/list", method = RequestMethod.GET)
 	public String listAds(ModelMap model) {
 

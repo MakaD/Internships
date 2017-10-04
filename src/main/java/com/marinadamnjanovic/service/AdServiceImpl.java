@@ -33,6 +33,8 @@ public class AdServiceImpl implements AdService{
             entity.setCity(ad.getCity());
             entity.setCompany(ad.getCompany());
         }
+
+        //adDao.saveAd(entity);
     }
 
     public void deleteAdById(int id){
