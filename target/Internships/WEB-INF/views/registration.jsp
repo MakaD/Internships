@@ -48,7 +48,7 @@
                 <tr>
                     <td><form:label for="title" path="title">Title: </form:label> </td>
                     <td><form:input type="text" id="title" placeholder='Title' path="title" class="form-control"/></td>
-                    <td><form:errors path="title" cssClass="error"/></td>
+                    <td><form:errors path="title" style="color:red" cssClass="error"/></td>
                 </tr>
                 <tr class="blank_row">
                     <td colspan="3"></td>
@@ -56,7 +56,7 @@
                 <tr>
                     <td><form:label for="deadline" path="deadline">Deadline: </form:label> </td>
                     <td><form:input type="text" id="deadline" placeholder='Deadline' path="deadline" class="form-control"/></td>
-                    <td><form:errors path="deadline" cssClass="error"/></td>
+                    <td><form:errors path="deadline" style="color:red" cssClass="error"/></td>
                 </tr>
                 <tr class="blank_row">
                     <td colspan="3"></td>
@@ -64,7 +64,7 @@
                 <tr>
                     <td><form:label for="company" path="company">Company: </form:label> </td>
                     <td><form:input type="text" id="company" placeholder='Company' path="company" class="form-control"/></td>
-                    <td><form:errors path="company" cssClass="error"/></td>
+                    <td><form:errors path="company" style="color:red" cssClass="error"/></td>
                 </tr>
                 <tr class="blank_row">
                     <td colspan="3"></td>
@@ -72,7 +72,7 @@
                 <tr>
                     <td><form:label for="city" path="city">City: </form:label> </td>
                     <td><form:input type="text" id="city" placeholder='City' path="city" class="form-control"/></td>
-                    <td><form:errors path="city" cssClass="error"/></td>
+                    <td><form:errors path="city" style="color:red" cssClass="error"/></td>
                 </tr>
                 <tr class="blank_row">
                     <td colspan="3"></td>
@@ -80,7 +80,7 @@
                 <tr>
                     <td><form:label for="category" path="category">Category: </form:label> </td>
                     <td><form:input type="text" id="category" placeholder='Category' path="category" class="form-control"/></td>
-                    <td><form:errors path="category" cssClass="error"/></td>
+                    <td><form:errors path="category" style="color:red" cssClass="error"/></td>
                 </tr>
                 <tr class="blank_row">
                     <td colspan="3"></td>
@@ -88,7 +88,7 @@
                 <tr>
                     <td><form:label for="description" path="description">Description: </form:label> </td>
                     <td><form:textarea id="description" placeholder="Description" path="description" class="myarea form-control"></form:textarea></td>
-                    <td><form:errors path="description" cssClass="error"/></td>
+                    <td><form:errors path="description" style="color:red" cssClass="error"/></td>
                 </tr>
                 <tr class="bigger blank_row">
                     <td colspan="3"></td>
@@ -129,6 +129,7 @@
         height: 250px !important;
         width: 500px !important;
     }
+
 </style>
 
 </html>

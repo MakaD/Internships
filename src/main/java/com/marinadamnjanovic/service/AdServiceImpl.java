@@ -45,4 +45,6 @@ public class AdServiceImpl implements AdService{
         return adDao.findAllAds();
     }
 
+    public List<AdModel> search(String param) {return adDao.search(param);}
+
 }

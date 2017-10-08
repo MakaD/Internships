@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import java.util.List;
 
@@ -140,6 +141,22 @@ public class AppController {
 	public String deleteEmployee(@PathVariable int id) {
 		service.deleteAdById(id);
 		return "redirect:/list";
+	}
+
+	@RequestMapping(value="/search", method=RequestMethod.GET)
+	public String search(HttpServletRequest request, ModelMap model){
+		String param = request.getParameter("search_bar");
+		List<AdModel> ads = service.search(param);
+		model.addAttribute("ads", ads);
+		return "allads";
+	}
+
+	@RequestMapping(value="/searchHp", method=RequestMethod.GET)
+	public String searchHp(HttpServletRequest request, ModelMap model){
+		String param = request.getParameter("search_bar");
+		List<AdModel> ads = service.search(param);
+		model.addAttribute("ads", ads);
+		return "internships";
 	}
 
 }

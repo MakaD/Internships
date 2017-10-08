@@ -16,4 +16,6 @@ public interface AdService {
 
     List<AdModel> findAllAds();
 
+    List<AdModel> search(String param);
+
 }

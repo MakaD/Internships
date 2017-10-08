@@ -22,13 +22,13 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
                 <li>
-                    <a href="<spring:url value="/about"/>">About</a>
-                </li>
-                <li>
                     <a href="<spring:url value="/internships"/>">List of ads</a>
                 </li>
                 <li>
                     <a href="<spring:url value="/list"/>">Manage ads</a>
+                </li>
+                <li>
+                    <a href="#contactFormModal" data-toggle="modal" data-target="#contactFormModal" style="outline: none;">Contact</a>
                 </li>
             </ul>
         </div>
@@ -36,6 +36,45 @@
     </div>
     <!-- /.container -->
 </nav>
+
+<div id="contactFormModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Lets stay in touch</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <div class="col-md-2">
+                        <label class="control-label">Name:</label>
+                    </div>
+                    <div class="col-md-4">
+                        <input class="form-control" id="name" type="text" placeholder="Your Name">
+                    </div>
+                    <div class="col-md-2">
+                        <label class="control-label">Email:</label>
+                    </div>
+                    <div class="col-md-4">
+                        <input class="form-control" id="email" type="text" placeholder="Your Email">
+                    </div>
+                    <br /><br />
+                    <div class="col-md-2">
+                        <label class="control-label">Message: </label>
+                    </div>
+                    <div class="col-md-10">
+                        <textarea class="col-md-10 form-control" id="comment" placeholder="Your Message for Us" style="width: 60%;"></textarea>
+                    </div>
+                    <br /><br />
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Send</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 </body>
 </html>

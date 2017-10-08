@@ -46,11 +46,21 @@
 
             <div class="panel panel-default panel-table">
                 <div class="panel-heading">
-                    <div class="row">
-                        <div class="col col-xs-6">
+                    <div class="row ">
+                        <div class="col col-xs-4 alignment">
                             <h3 class="panel-title">List of all ads</h3>
                         </div>
-                        <div class="col col-xs-6 text-right">
+                        <div class="col col-xs-4">
+                            <form class="navbar-form" role="search" action="<spring:url value="/search/"/>">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="search_bar" name="search_bar" placeholder="Search">
+                                    <div class="input-group-btn">
+                                        <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col col-xs-4 text-right alignment">
                             <a href="<spring:url value="/new"/>" class="btn btn-sm btn-primary btn-create" role="button">Add New</a>
                         </div>
                     </div>
@@ -98,5 +108,17 @@
 <%@ include file="../views/fragments/footer.jsp"%>
 
 </body>
+
+<style>
+
+    .glyphicon-search{
+        height: 20px;
+    }
+    .alignment{
+        height: 50px;
+        margin-top: 10px;
+    }
+
+</style>
 
 </html>

@@ -42,28 +42,45 @@
 
     <div class="row">
 
-        <div class="col-lg-6">
+        <div class="col-sm-offset-2">
 
-            <div class="card mt-4">
-                <img class="card-img-top img-responsive" src="<c:url value="/resources/images/${ad.company}.jpg" />" alt="">
-                <div class="card-body">
-                    <h3 class="card-title">${ad.title}</h3>
-                    <h4>Deadline: ${ad.deadline}</h4>
-                    <br>
+            <div class="col-md-6">
+                <img class="img-fluid" src="<c:url value="/resources/images/${ad.company}.jpg"/>" alt="">
+            </div>
+
+            <div class="col-md-6">
+                <h3 class="my-3">${ad.title}</h3>
+                <h4 class="my-3">Deadline: ${ad.deadline}</h4>
+                </br>
+                <ul>
                     <h5>Company: ${ad.company}</h5>
                     <h5>Category: ${ad.category}</h5>
                     <h5>City: ${ad.city}</h5>
-                    <br><br>
-                    <p class="card-text">We are hiring for: <br><br> ${ad.description}</p>
-                    <br>
-                </div>
+                </ul>
             </div>
-            <!-- /.card -->
-        </div>
-        <!-- /.col-lg-9 -->
 
+        </div>
     </div>
     <!-- /.row -->
+
+    <div class="row">
+        <hr class="linestyle">
+    </div>
+
+    <div class="row">
+
+        <div class="col-lg-8 col-sm-offset-2 text-center">
+            <h3>We are hiring for:</h3>
+            <br><br>
+            <p>${ad.description}</p>
+            <br>
+        </div>
+
+    </div>
+
+    <div class="row">
+        <hr class="linestyle">
+    </div>
 
 </div>
 <!-- /.container -->
@@ -73,20 +90,25 @@
 </body>
 
 <style>
-
-    .img-responsive, .card-img-top{
-        max-height:450px !important;
-        max-width:450px !important;
-    }
-
     body {
         padding-top: 54px;
     }
-
+    .img-fluid{
+        max-height:200px !important;
+        max-width:450px !important;
+    }
     @media (min-width: 992px) {
         body {
             padding-top: 56px;
         }
+    }
+    hr.linestyle {
+        border: 0;
+        height: 1px;
+        background-image: -webkit-linear-gradient(left, #f0f0f0, #b4b1c9, #f0f0f0);
+        background-image: -moz-linear-gradient(left, #f0f0f0, #b4b1c9, #f0f0f0);
+        background-image: -ms-linear-gradient(left, #f0f0f0, #b4b1c9, #f0f0f0);
+        background-image: -o-linear-gradient(left, #f0f0f0, #b4b1c9, #f0f0f0);
     }
 </style>
 

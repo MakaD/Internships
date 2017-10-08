@@ -6,6 +6,7 @@ import org.hibernate.Query;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Repository("adDao")
@@ -30,5 +31,19 @@ public class AdDaoImpl extends AbstractDao<Integer, AdModel> implements AdDao{
         Criteria criteria = createEntityCriteria();
         return (List<AdModel>) criteria.list();
     }
+
+    @SuppressWarnings("unchecked")
+    public List<AdModel> search(String param) {
+        Criteria criteria = createEntityCriteria();
+        List<AdModel> ads = (List<AdModel>) criteria.list();
+        List<AdModel> filteredAds = new ArrayList<>();
+        for (AdModel ad:ads) {
+            if(ad.toString().toLowerCase().contains(param.toLowerCase())){
+                filteredAds.add(ad);
+            }
+        }
+        return filteredAds;
+    }
+
 
 }

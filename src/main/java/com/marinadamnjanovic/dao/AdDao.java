@@ -14,4 +14,6 @@ public interface AdDao {
 
     List<AdModel> findAllAds();
 
+    List<AdModel> search(String param);
+
 }

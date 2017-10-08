@@ -1,10 +1,8 @@
 package com.marinadamnjanovic.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import org.hibernate.validator.constraints.NotEmpty;
+
+import javax.persistence.*;
 
 @Entity
 @Table(name="ads")
@@ -14,16 +12,22 @@ public class AdModel {
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private int id;
 
+    @NotEmpty
     public String title;
 
+    @NotEmpty
     public String description;
 
+    @NotEmpty
     public String deadline;
 
+    @NotEmpty
     public String category;
 
+    @NotEmpty
     public String city;
 
+    @NotEmpty
     public String company;
 
     public AdModel() {

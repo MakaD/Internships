@@ -38,9 +38,25 @@
     </div>
     <!-- /.row -->
 
-
+    <div class="row ">
+        <div class="col col-md-12 text-right">
+            <form class="navbar-form" role="search" action="<spring:url value="/searchHp/"/>">
+                <div class="input-group">
+                    <input type="text" class="form-control" id="search_bar" name="search_bar" placeholder="Search">
+                    <div class="input-group-btn">
+                        <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
 
     <div class="row">
+        <hr class="linestyle">
+    </div>
+
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
         <c:forEach items="${ads}" var="ad">
             <div class=" col-md-4 portfolio-item">
                 <a href="<c:url value='/addetails/${ad.id}'/> ">
@@ -54,11 +70,12 @@
                 <h5>Company: ${ad.company}</h5>
             </div>
         </c:forEach>
+        </div>
     </div>
 
-
-
-
+    <div class="row">
+        <hr class="linestyle">
+    </div>
 
     <!-- Pagination -->
     <div class="row text-center">
@@ -104,6 +121,17 @@
 
     .img-responsive {
         min-height:145px !important;
+    }
+    .glyphicon-search{
+        height: 20px;
+    }
+    hr.linestyle {
+        border: 0;
+        height: 1px;
+        background-image: -webkit-linear-gradient(left, #f0f0f0, #b4b1c9, #f0f0f0);
+        background-image: -moz-linear-gradient(left, #f0f0f0, #b4b1c9, #f0f0f0);
+        background-image: -ms-linear-gradient(left, #f0f0f0, #b4b1c9, #f0f0f0);
+        background-image: -o-linear-gradient(left, #f0f0f0, #b4b1c9, #f0f0f0);
     }
 
 </style>
