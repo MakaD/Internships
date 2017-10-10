@@ -40,13 +40,13 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
                 <li>
-                    <a href="<spring:url value="/about"/>">About</a>
-                </li>
-                <li>
                     <a href="<spring:url value="/internships"/>">List od ads</a>
                 </li>
                 <li>
                     <a href="<spring:url value="/list"/>">Manage ads</a>
+                </li>
+                <li>
+                    <a href="<spring:url value="/company"/>">For Companies</a>
                 </li>
             </ul>
         </div>

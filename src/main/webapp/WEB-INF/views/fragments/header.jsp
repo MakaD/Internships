@@ -28,6 +28,9 @@
                     <a href="<spring:url value="/list"/>">Manage ads</a>
                 </li>
                 <li>
+                    <a href="<spring:url value="/company"/>">For Companies</a>
+                </li>
+                <li>
                     <a href="#contactFormModal" data-toggle="modal" data-target="#contactFormModal" style="outline: none;">Contact</a>
                 </li>
             </ul>

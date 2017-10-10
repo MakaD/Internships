@@ -28,6 +28,9 @@
                     <a href="<spring:url value="/list"/>">Manage ads</a>
                 </li>
                 <li>
+                    <a href="<spring:url value="/company"/>">For Companies</a>
+                </li>
+                <li>
                     <a href="#contactFormModal" data-toggle="modal" data-target="#contactFormModal" style="outline: none;">Contact</a>
                 </li>
             </ul>
@@ -42,7 +45,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Lets stay in touch</h4>
+                <h4 class="modal-title">Let's stay in touch</h4>
             </div>
             <div class="modal-body">
                 <div class="form-group">

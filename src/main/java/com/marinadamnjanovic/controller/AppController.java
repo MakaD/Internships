@@ -32,9 +32,9 @@ public class AppController {
 		return "index";
 	}
 
-	@RequestMapping("/about")
-	public String about(){
-		return "about";
+	@RequestMapping("/company")
+	public String company(){
+		return "company";
 	}
 
 	@RequestMapping("/success")
@@ -65,9 +65,6 @@ public class AppController {
 		return "allads";
 	}
 
-	/*
-     * This method will provide the medium to add a new employee.
-     */
 	@RequestMapping(value = { "/new" }, method = RequestMethod.GET)
 	public String newAd(ModelMap model) {
 		AdModel ad = new AdModel();
@@ -76,10 +73,6 @@ public class AppController {
 		return "registration";
 	}
 
-	/*
-     * This method will be called on form submission, handling POST request for
-     * saving employee in database. It also validates the user input
-     */
 	@RequestMapping(value = { "/new" }, method = RequestMethod.POST)
 	public String saveAd(@Valid @ModelAttribute("ad") AdModel ad, BindingResult result,
 						 ModelMap model) {
@@ -88,25 +81,12 @@ public class AppController {
 			return "registration";
 		}
 
-        /*
-         * Preferred way to achieve uniqueness of field [ssn] should be implementing custom @Unique annotation
-         * and applying it on field [ssn] of Model class [Employee].
-         *
-         * Below mentioned peace of code [if block] is to demonstrate that you can fill custom errors outside the validation
-         * framework as well while still using internationalized messages.
-         *
-         */
-
 		service.saveAd(ad);
 
 		model.addAttribute("success", "Ad " + ad.getTitle() + " registered successfully");
 		return "success";
 	}
 
-
-	/*
-     * This method will provide the medium to update an existing employee.
-     */
 	@RequestMapping(value = { "/edit/{id}/ad" }, method = RequestMethod.GET)
 	public String editAd(@PathVariable int id, ModelMap model) {
 		AdModel ad = service.findById(id);
@@ -115,10 +95,6 @@ public class AppController {
 		return "registration";
 	}
 
-	/*
-     * This method will be called on form submission, handling POST request for
-     * updating employee in database. It also validates the user input
-     */
 	@RequestMapping(value = { "/edit/{id}/ad" }, method = RequestMethod.POST)
 	public String updateAd(@Valid AdModel ad, BindingResult result,
 								 ModelMap model, @PathVariable int id) {
@@ -133,10 +109,6 @@ public class AppController {
 		return "success";
 	}
 
-
-	/*
-     * This method will delete an employee by it's SSN value.
-     */
 	@RequestMapping(value = { "/delete/{id}/ad" }, method = RequestMethod.GET)
 	public String deleteEmployee(@PathVariable int id) {
 		service.deleteAdById(id);
